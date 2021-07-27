@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<style>
+.div2 
+{
+  width: 300px;
+  height: 100px;
+  padding: 50px;
+  border: 1px solid green;
+}
+</style>
+</head>
+<body>
+<br>
+<center>
+{% for msg in messages %}
+
+
+
+
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+  <strong>Hey!</strong>{{ msg }}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+    <span aria-hidden="true">&times;</span>
+
+  </button>
+
+</div>
+
+
+        
+
+
+
+        {% endfor %}
+        <div class="div2"
+<br>
+<form action="{% url 'hiii:signup' %}" method="POST" enctype="multipart/form-data">
+
+    <table>
+    <tr>
+    {% csrf_token%}
+    <td>
+    {{form.as_table}}
+    </td>
+    </tr>
+    </table>
+    <input type="Submit" name="" value="Submit">
+    </form>
+    </center>
+    </body>
+  {% endblock %}

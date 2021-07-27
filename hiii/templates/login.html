@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+<style>
+.div2 
+{
+  width: 500px;
+  height: 200px;
+  padding: 50px;
+  border: 1px solid green;
+}
+.div2 img
+{
+
+}
+</style>
+</head>
+
+<body style="margin:auto"  >
+
+<br>
+
+<center>
+
+{% for msg in messages %}
+
+
+
+
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+  <strong>Hey!</strong>{{ msg }}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+    <span aria-hidden="true">&times;</span>
+
+  </button>
+
+</div>
+
+
+
+
+
+        {% endfor %}
+<div class="div2">
+<br>
+<br>
+<br>
+<form action="{% url 'hiii:login' %}" method="POST">
+
+
+    <table >
+    <tr>
+    {% csrf_token%}
+    <td>
+    
+    {{form.as_table}}
+    </td>
+    </tr>
+    </table>
+    <input type="Submit" name="" value="Submit">
+    </form>
+    </center>
+    </body>
+    {% endblock %}

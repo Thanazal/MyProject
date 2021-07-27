@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<body>
+{% for msg in messages %}
+
+
+
+
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+  <strong>Hey!</strong>{{ msg }}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+    <span aria-hidden="true">&times;</span>
+
+  </button>
+
+</div>
+
+
+        
+
+
+
+        {% endfor %}
+
+<center>Welcome to home page {{user.Name}}
+<table>
+<tr>
+<center>Age {{user.Age}}
+<td>
+<td>
+<td> <img src= "{{user.Photo.url}}" height=360px width=360px}
+</td>
+</td>
+<td>
+
+</td>
+</tr>
+<a href="{% url 'hiii:update' user.id %}">update</a>
+<br>
+<a href="{% url 'hiii:changepassword' user.id %}">Password Change</a>
+<br>
+<a href="{% url 'hiii:logout' %}">Logout</a>
+</body>
+</html>
